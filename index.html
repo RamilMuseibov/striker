@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        cursor: crosshair;
+      }
+      .target {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="target" class="target" style="top: 100px; left: 1000px"></div>
+    <div id="result">Мой счет</div>
+    <div id="best"></div>
+    <div id="avg"></div>
+
+    <script>
+      const target = document.querySelector("#target");
+      const result = document.querySelector("#result");
+      const best = document.querySelector("#best");
+      const avg = document.querySelector("#avg");
+
+      function moveTarget() {
+        const x = random(0, window.innerWidth - 100);
+        const y = random(0, window.innerHeight - 100);
+
+        target.style.left = x + "px";
+        target.style.top = y + "px";
+      }
+
+      let date = Date.now();
+      let bestRes = Infinity;
+      let tries = 0;
+      let sum = 0;
+
+      target.addEventListener("click", function clickHandler() {
+        tries++;
+
+        let currentRes = Date.now() - date;
+        target.style.display = "none";
+        result.innerHTML = `Последний результат ${currentRes}`;
+        if (bestRes > currentRes) {
+          bestRes = currentRes;
+        }
+        sum = currentRes + sum;
+
+        console.log(sum);
+
+        best.innerHTML = `Лучший результат ${bestRes}`;
+        avg.innerHTML = `Средний результат ${sum / tries}`;
+
+        const delay = random(2000, 5000);
+        setTimeout(() => {
+          date = Date.now();
+          moveTarget();
+          target.style.display = "block";
+        }, delay);
+      });
+
+      function random(min, max) {
+        return min + Math.round(Math.random() * (max - min));
+      }
+    </script>
+  </body>
+</html>
