@@ -18,20 +18,48 @@
         position: absolute;
         border-radius: 50%;
       }
+
+      .start-btn {
+        cursor: pointer;
+        margin-left: 45%;
+        margin-top: 25%;
+        color: white;
+        font-size: 50px;
+        border-radius: 10px;
+        background-color: rgba(4, 0, 255, 0.488);
+        width: 200px;
+        height: 100px;
+
+        &:hover {
+          background-color: rgba(4, 0, 255, 0.752);
+        }
+      }
     </style>
   </head>
 
   <body>
+    <button id="start" class="start-btn">Start</button>
     <div id="target" class="target" style="top: 100px; left: 1000px"></div>
     <div id="result">Мой счет</div>
     <div id="best"></div>
     <div id="avg"></div>
 
     <script>
+      const startBtn = document.querySelector("#start");
       const target = document.querySelector("#target");
       const result = document.querySelector("#result");
       const best = document.querySelector("#best");
       const avg = document.querySelector("#avg");
+
+      target.style.display = "none";
+      result.style.display = "none";
+
+      startBtn.addEventListener("click", function startGame() {
+        startBtn.style.display = "none";
+
+        target.style.display = "block";
+        result.style.display = "block";
+      });
 
       function moveTarget() {
         const x = random(0, window.innerWidth - 100);
