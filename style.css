@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+}
+
+.res-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  width: 300px;
+  border: 1px solid black;
+  padding: 15px;
+  line-height: 35px;
+  margin-top: 10px;
+}
+
+.target {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.btn-start-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-btn {
+  cursor: pointer;
+  color: white;
+  font-size: 100px;
+  border-radius: 10px;
+  background-color: rgba(4, 0, 255, 0.488);
+  width: 400px;
+  height: 200px;
+
+  &:hover {
+    background-color: rgba(4, 0, 255, 0.752);
+  }
+}

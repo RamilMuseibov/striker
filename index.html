@@ -4,43 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
-        cursor: crosshair;
-      }
-      .target {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        position: absolute;
-        border-radius: 50%;
-      }
-
-      .btn-start-container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .start-btn {
-        cursor: pointer;
-        color: white;
-        font-size: 100px;
-        border-radius: 10px;
-        background-color: rgba(4, 0, 255, 0.488);
-        width: 400px;
-        height: 200px;
-
-        &:hover {
-          background-color: rgba(4, 0, 255, 0.752);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -50,9 +14,9 @@
     <div id="target" class="target" style="top: 100px; left: 1000px"></div>
     <div id="resContainer" class="res-container">
       Мой счет
-      <div id="result"></div>
-      <div id="best"></div>
-      <div id="avg"></div>
+      <div id="result" class="last-res"></div>
+      <div id="best" class="best-res"></div>
+      <div id="avg" class="avg-res"></div>
     </div>
 
     <script>
@@ -91,7 +55,7 @@
 
         let currentRes = Date.now() - date;
         target.style.display = "none";
-        result.innerHTML = `Последний результат ${currentRes}`;
+        result.innerHTML = `Последний результат: ${currentRes}`;
         if (bestRes > currentRes) {
           bestRes = currentRes;
         }
@@ -99,8 +63,8 @@
 
         console.log(sum);
 
-        best.innerHTML = `Лучший результат ${bestRes}`;
-        avg.innerHTML = `Средний результат ${sum / tries}`;
+        best.innerHTML = `Лучший результат: ${bestRes}`;
+        avg.innerHTML = `Средний результат: ${Math.round(sum / tries)}`;
 
         const delay = random(2000, 5000);
         setTimeout(() => {
