@@ -19,16 +19,22 @@
         border-radius: 50%;
       }
 
+      .btn-start-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       .start-btn {
         cursor: pointer;
-        margin-left: 45%;
-        margin-top: 25%;
         color: white;
-        font-size: 50px;
+        font-size: 100px;
         border-radius: 10px;
         background-color: rgba(4, 0, 255, 0.488);
-        width: 200px;
-        height: 100px;
+        width: 400px;
+        height: 200px;
 
         &:hover {
           background-color: rgba(4, 0, 255, 0.752);
@@ -38,27 +44,33 @@
   </head>
 
   <body>
-    <button id="start" class="start-btn">Start</button>
+    <div id="btnStartContainer" class="btn-start-container">
+      <button id="start" class="start-btn">Start</button>
+    </div>
     <div id="target" class="target" style="top: 100px; left: 1000px"></div>
-    <div id="result">Мой счет</div>
-    <div id="best"></div>
-    <div id="avg"></div>
+    <div id="resContainer" class="res-container">
+      Мой счет
+      <div id="result"></div>
+      <div id="best"></div>
+      <div id="avg"></div>
+    </div>
 
     <script>
       const startBtn = document.querySelector("#start");
       const target = document.querySelector("#target");
+      const resContainer = document.querySelector("#resContainer");
       const result = document.querySelector("#result");
       const best = document.querySelector("#best");
       const avg = document.querySelector("#avg");
 
+      resContainer.style.display = "none";
       target.style.display = "none";
-      result.style.display = "none";
 
       startBtn.addEventListener("click", function startGame() {
         startBtn.style.display = "none";
 
+        resContainer.style.display = "block";
         target.style.display = "block";
-        result.style.display = "block";
       });
 
       function moveTarget() {
