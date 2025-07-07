@@ -20,18 +20,22 @@
     </div>
 
     <script>
+      const btnStartContainer = document.querySelector("#btnStartContainer")
       const startBtn = document.querySelector("#start");
       const target = document.querySelector("#target");
       const resContainer = document.querySelector("#resContainer");
       const result = document.querySelector("#result");
       const best = document.querySelector("#best");
       const avg = document.querySelector("#avg");
+      
 
       resContainer.style.display = "none";
       target.style.display = "none";
 
       startBtn.addEventListener("click", function startGame() {
         startBtn.style.display = "none";
+        btnStartContainer.style.display = "none"
+        
 
         resContainer.style.display = "block";
         target.style.display = "block";
