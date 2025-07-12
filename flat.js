@@ -1,16 +1,15 @@
 const arr = [
-  [1, 2],
-  [3, 4],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
-// const arr = [1, 2, 3, 4];
-// не мутировать исходникик
 
-function flat() {
+function flat(arr) {
   const newArr = [];
   let i = 0;
   while (i < arr.length) {
     let j = 0;
-    while (j < arr.length) {
+    while (j < arr[i].length) {
       newArr.push(arr[i][j]);
       j++;
     }
@@ -18,5 +17,5 @@ function flat() {
   }
   return newArr;
 }
-console.log(flat(arr));
+console.log(flat(arr2));
 console.log(arr);
