@@ -19,3 +19,4 @@ function flat(arr) {
 }
 console.log(flat(arr2));
 console.log(arr);
+//
