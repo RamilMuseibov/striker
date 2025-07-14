@@ -3,4 +3,4 @@ const paths = ["a"];
 
 function omit(obj, paths) {} // omit исключит paths
 
-// {foo: "bar", b: 2} - на выходе
+// {foo: "bar", b: 2} - на выходее
