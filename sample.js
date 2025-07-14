@@ -10,3 +10,4 @@ function sample(arr) {
   return arr[randomIndex];
 }
 console.log(sample(arr));
+// 

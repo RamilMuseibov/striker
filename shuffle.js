@@ -18,3 +18,4 @@ function shuffle(arr) {
   return newArr;
 }
 console.log(shuffle(arr));
+// 
