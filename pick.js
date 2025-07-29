@@ -4,17 +4,17 @@ const keys = ["foo", "b"];
 //pick возьмет paths
 
 function pick(obj, paths) {
-  obj = { ...input };
   let i = 0;
   let newObj = {};
   while (i < paths.length) {
-    if (paths[i] in obj) {
-    //   console.log(paths[i]);
-    //   console.log(obj[paths[i]]);
-        newObj[paths[i]] = obj[paths[i]];
+    const key = paths[i];
+    if (key in obj) {
+      const value = obj[key];
+      newObj[key] = value; //newObj[foo] =
     }
     i++;
   }
   return newObj;
 }
 console.log(pick(input, keys));
+// console.log(input);
