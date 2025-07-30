@@ -140,9 +140,14 @@
 // }
 // console.log(customFilter(array, predicate));
 
-// /!10.Создай функцию delayedAction, которая принимает функцию и число миллисекунд, и вызывает переданную функцию с задержкой, используя setTimeout./;
+/!10.Создай функцию delayedAction, которая принимает функцию и число миллисекунд, и вызывает переданную функцию с задержкой, используя setTimeout./;
 
-// function setHello() {
-//   console.log("Hello");
-// }
-// function delayedAction(timeoutFunc, milliseconds) {}
+function setHello() {
+  console.log("Hello");
+}
+function delayedAction(timeoutFunc, milliseconds) {
+  setTimeout(() => {
+    timeoutFunc();
+  }, milliseconds);
+}
+delayedAction(setHello, 2000);
