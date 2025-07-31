@@ -15,11 +15,7 @@
 // /!3. Создай функцию isEven, которая принимает число и возвращает true, если оно четное, и false в противном случае./;
 
 // function isEven(number) {
-//   if (number % 2 === 0) {
-//     return true;
-//   } else {
-//     return false;
-//   }
+//   return number % 2 === 0;
 // }
 // console.log(isEven(5));
 
@@ -104,17 +100,22 @@
 
 // const array = [5, 8, 3, 1, 9, 45, 23, 89, 45, 32];
 
-// function squareNumbs(arr) {
-//   return arr.map((item) => item ** 2);
+// function squareNumbs(num) {
+//   return num ** 2;
 // }
 
 // function applyToEach(arr, transformFunc) {
-//   const newArr = transformFunc(arr);
-//   console.log(newArr);
+//   let i = 0;
+//   let newArr = [];
+//   while (i < arr.length) {
+//     newArr.push(transformFunc(arr[i]));
+
+//     i++;
+//   }
 
 //   return newArr;
 // }
-// console.log(squareNumbs(array, applyToEach));
+// console.log(applyToEach(array, squareNumbs));
 
 // /!9.Напиши функцию customFilter, которая принимает массив и функцию-предикат. Верни массив только с теми элементами, для которых функция-предикат вернула true./;
 
@@ -140,14 +141,14 @@
 // }
 // console.log(customFilter(array, predicate));
 
-/!10.Создай функцию delayedAction, которая принимает функцию и число миллисекунд, и вызывает переданную функцию с задержкой, используя setTimeout./;
+// /!10.Создай функцию delayedAction, которая принимает функцию и число миллисекунд, и вызывает переданную функцию с задержкой, используя setTimeout./;
 
-function setHello() {
-  console.log("Hello");
-}
-function delayedAction(timeoutFunc, milliseconds) {
-  setTimeout(() => {
-    timeoutFunc();
-  }, milliseconds);
-}
-delayedAction(setHello, 2000);
+// function setHello() {
+//   console.log("Hello");
+// }
+// function delayedAction(timeoutFunc, milliseconds) {
+//   setTimeout(() => {
+//     timeoutFunc();
+//   }, milliseconds);
+// }
+// delayedAction(setHello, 2000);
