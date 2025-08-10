@@ -106,7 +106,7 @@
 
 // function applyToEach(arr, transformFunc) {
 //   let i = 0;
-//   let newArr = [];
+//   const newArr = [];
 //   while (i < arr.length) {
 //     newArr.push(transformFunc(arr[i]));
 
@@ -117,7 +117,7 @@
 // }
 // console.log(applyToEach(array, squareNumbs));
 
-// /!9.Напиши функцию customFilter, которая принимает массив и функцию-предикат. Верни массив только с теми элементами, для которых функция-предикат вернула true./;
+// /!9.Напиши функцию customF]ilter, которая принимает массив и функцию-предикат. Верни массив только с теми элементами, для которых функция-предикат вернула true./;
 
 // const array = [5, 8, 3, 1, 9, 12, 23, 10, 45, 32];
 
@@ -127,11 +127,11 @@
 //   }
 // }
 
-// function customFilter(arr, predicateFunc) {
-//   let newArr = [];
+// function filter(arr, predicateFunc) {
+//   const newArr = [];
 //   let i = 0;
 //   while (i < arr.length) {
-//     if (predicateFunc(arr[i]) === true) {
+//     if (predicateFunc(arr[i], i, arr)) {
 //       newArr.push(arr[i]);
 //     }
 //     i++;
@@ -139,7 +139,7 @@
 
 //   return newArr;
 // }
-// console.log(customFilter(array, predicate));
+// console.log(filter(array, predicate));
 
 // /!10.Создай функцию delayedAction, которая принимает функцию и число миллисекунд, и вызывает переданную функцию с задержкой, используя setTimeout./;
 
@@ -152,3 +152,190 @@
 //   }, milliseconds);
 // }
 // delayedAction(setHello, 2000);
+
+// /!10.forEach, map, find, includes, findIndex, toReversed/;
+
+// --------------------forEach--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 5, 12, 8];
+
+// function enumeretion(item, index, array) {
+//   return (array[index] = item);
+// }
+
+// function forEach(arr, cb) {
+//   let i = 0;
+//   while (i < arr.length) {
+//     cb(arr[i], i, arr);
+//     i++;
+//   }
+// }
+// console.log(forEach(array, enumeretion));
+
+// // --------------------map--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 5, 12, 8];
+
+// function enumeretion(item, index, array) {
+//   array[index] = item;
+//   return item ** 2;
+// }
+
+// function map(arr, cb) {
+//   let i = 0;
+//   const newArr = [];
+//   while (i < arr.length) {
+//     newArr.push(cb(arr[i], i, arr));
+//     i++;
+//   }
+//   return newArr;
+// }
+// console.log(map(array, enumeretion));
+
+// // --------------------find--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 5, 12, 8];
+
+// function enumeretion(item, index, array) {
+//   array[index] = item;
+
+//   return item % 2 === 0 ? true : undefined;
+// }
+
+// function find(arr, predicate) {
+//   let i = 0;
+//   while (i < arr.length) {
+//     if (predicate(arr[i], i, arr)) {
+//       return arr[i];
+//     }
+//     i++;
+//   }
+// }
+// console.log(find(array, enumeretion));
+
+// // --------------------findIndex--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 5, 12, 8];
+
+// function enumeretion(item, index, array) {
+//   array[index] = item;
+
+//   return item % 2 === 0 ? true : undefined;
+// }
+
+// function findIndex(arr, predicate) {
+//   let i = 0;
+//   while (i < arr.length) {
+//     if (predicate(arr[i], i, arr)) {
+//       return i;
+//     }
+//     i++;
+//   }
+//   return -1;
+// }
+// console.log(findIndex(array, enumeretion));
+
+// // --------------------includes--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 5, 12, 8];
+
+// function includes(arr, item, index = 0) {
+//   //   let i = index;
+
+//   //   if (index !== undefined) {
+//   //     i = index;
+//   //   }
+
+//   while (index < arr.length) {
+//     if (item === arr[index]) {
+//       return true;
+//     }
+//     index++;
+//   }
+//   return false;
+// }
+// console.log(includes(array, 9));
+
+// // --------------------toReversed--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 5, 12, 8];
+
+// function toReversed(arr) {
+//   let i = arr.length - 1;
+//   const newArr = [];
+//   while (i >= 0) {
+//     newArr.push(arr[i]);
+//     i--;
+//   }
+//   return newArr;
+// }
+// console.log(toReversed(array));
+
+// --------------------reverse--------------------
+// const array = [6, 9, 234, 67, 5, 34, 26, 5, 12, 8];
+
+// function reverse(arr) {
+//   let i = 0;
+//   let j = arr.length - 1;
+
+//   while (i < arr.length / 2) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     j--;
+//     i++;
+//   }
+// }
+// reverse(array);
+// console.log(array);
+
+// --------------------join--------------------
+
+// const array = [6, 9, 234, 67, 5, 34, 26, 5, 12, 8];
+
+// function join(arr, separator = ",") {
+//   let i = 1;
+//   let str = arr[0];
+//   while (i < arr.length) {
+//     str += separator + arr[i];
+//     i++;
+//   }
+//   return str;
+// }
+// console.log(join(array, "."));
+
+// --------------------pick--------------------
+
+// const object = { a: 1, b: 2, c: 3 };
+// // [["a",1], ["b,"2]]
+// function pick(obj, keys) {
+//   const newObj = {};
+//   let i = 0;
+//   while (i < keys.length) {
+//     if (keys[i] in obj) {
+//       newObj[keys[i]] = obj[keys[i]];
+//     }
+//     i++;
+//   }
+//   return newObj;
+// }
+// console.log(pick(object, ["a", "b"]));
+
+const array = [
+  ["a", 1],
+  ["b", 2],
+  ["c", 3],
+];
+
+function fromEntries(entries) {
+  const obj = {};
+
+  let i = 0;
+  while (i < entries.length) {
+    obj[entries[i][0]] = entries[i][1];
+    i++;
+  }
+  return obj;
+}
+
+console.log(fromEntries(array));
