@@ -321,21 +321,57 @@
 // }
 // console.log(pick(object, ["a", "b"]));
 
-const array = [
-  ["a", 1],
-  ["b", 2],
-  ["c", 3],
-];
+// const array = [
+//   ["a", 1],
+//   ["b", 2],
+//   ["c", 3],
+// ];
 
-function fromEntries(entries) {
-  const obj = {};
+// function fromEntries(entries) {
+//   const obj = {};
 
-  let i = 0;
-  while (i < entries.length) {
-    obj[entries[i][0]] = entries[i][1];
-    i++;
-  }
-  return obj;
-}
+//   let i = 0;
+//   while (i < entries.length) {
+//     obj[entries[i][0]] = entries[i][1];
+//     i++;
+//   }
+//   return obj;
+// }
 
-console.log(fromEntries(array));
+// console.log(fromEntries(array));
+
+// const matrixA = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
+// const matrixB = [
+//   [9, 8, 7],
+//   [6, 5, 4],
+//   [3, 2, 1],
+// ];
+
+// function multiplicationMatrix(matrix1, matrix2) {
+//   let newMatrix = [];
+//   let i = 0;
+//   while (i < matrix1.length) {
+//     newMatrix[i] = [];
+//     let j = 0;
+//     while (j < matrix2.length) {
+//       let k = 0;
+//       let sum = 0;
+//       while (k < matrix2.length) {
+//         sum += matrix1[i][k] * matrix2[k][j];
+//         k++;
+//       }
+//       newMatrix[i][j] = sum;
+//       console.log(newMatrix);
+
+//       j++;
+//     }
+//     i++;
+//   }
+//   return newMatrix;
+// }
+// console.log(multiplicationMatrix(matrixA, matrixB));
