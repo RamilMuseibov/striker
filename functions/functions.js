@@ -340,38 +340,38 @@
 
 // console.log(fromEntries(array));
 
-// const matrixA = [
-//   [1, 2, 3],
-//   [4, 5, 6],
-//   [7, 8, 9],
-// ];
+const matrixA = [
+  [1, 2, 3, 3],
+  [4, 5, 6, 6],
+  [7, 8, 9, 9],
+];
 
-// const matrixB = [
-//   [9, 8, 7],
-//   [6, 5, 4],
-//   [3, 2, 1],
-// ];
+const matrixB = [
+  [9, 8, 7],
+  [6, 5, 4],
+  [3, 2, 1],
+  [3, 2, 1],
+];
 
-// function multiplicationMatrix(matrix1, matrix2) {
-//   let newMatrix = [];
-//   let i = 0;
-//   while (i < matrix1.length) {
-//     newMatrix[i] = [];
-//     let j = 0;
-//     while (j < matrix2.length) {
-//       let k = 0;
-//       let sum = 0;
-//       while (k < matrix2.length) {
-//         sum += matrix1[i][k] * matrix2[k][j];
-//         k++;
-//       }
-//       newMatrix[i][j] = sum;
-//       console.log(newMatrix);
+function multiplicationMatrix(matrix1, matrix2) {
+  let newMatrix = [];
+  let i = 0;
+  while (i < matrix1.length) {
+    newMatrix[i] = [];
+    let j = 0;
+    while (j < matrix2[0].length) {
+      let k = 0;
+      let sum = 0;
+      while (k < matrix2.length) {
+        sum += matrix1[i][k] * matrix2[k][j];
+        k++;
+      }
+      newMatrix[i][j] = sum;
 
-//       j++;
-//     }
-//     i++;
-//   }
-//   return newMatrix;
-// }
-// console.log(multiplicationMatrix(matrixA, matrixB));
+      j++;
+    }
+    i++;
+  }
+  return newMatrix;
+}
+console.log(multiplicationMatrix(matrixA, matrixB));
