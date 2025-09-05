@@ -154,7 +154,7 @@
 //     if (!(key in finiteObj)) {
 //       finiteObj[key] = [];
 //     }
-//     finiteObj[key].push(value);  
+//     finiteObj[key].push(value);
 //   });
 //   return finiteObj;
 // }
@@ -181,6 +181,10 @@ const str = "Купил телефон, работает быстро, бата�
 
 function transformToJson(str) {
   const arr = str.split(", ").map((item) => item.split(" "));
-  return arr;
+  let newArr = [];
+  arr.forEach((item) => {
+    newArr = newArr.concat(item);
+  });
+  return newArr;
 }
 console.log(transformToJson(str));
