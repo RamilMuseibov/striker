@@ -374,4 +374,4 @@ function multiplicationMatrix(matrix1, matrix2) {
   }
   return newMatrix;
 }
-console.log(multiplicationMatrix(matrixA, matrixB));
+// console.log(multiplicationMatrix(matrixA, matrixB));
