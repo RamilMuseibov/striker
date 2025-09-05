@@ -185,6 +185,7 @@ function transformToJson(str) {
   arr.forEach((item) => {
     newArr = newArr.concat(item);
   });
+  newArr = newArr.map((item) => item.toLowerCase()).sort();
   return newArr;
 }
 console.log(transformToJson(str));
