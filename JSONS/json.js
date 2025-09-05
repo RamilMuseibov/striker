@@ -154,7 +154,7 @@
 //     if (!(key in finiteObj)) {
 //       finiteObj[key] = [];
 //     }
-//     finiteObj[key].push(value); 
+//     finiteObj[key].push(value);  
 //   });
 //   return finiteObj;
 // }
@@ -184,3 +184,4 @@ function transformToJson(str) {
   return arr;
 }
 console.log(transformToJson(str));
+// sdf
