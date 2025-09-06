@@ -177,15 +177,24 @@
 // Выход: объект частот слов, например - {купил:1, телефон:1, работает:1, быстро:1, ...}
 // И массив уникальных слов по алфавиту ["батарею","быстро","держит","долго","екран","купил","работает","телефон","яркий"]
 
-const str = "Купил телефон, работает быстро, батарею держит долго, экран яркий";
+const str =
+  "строка такая, прям берёшь и копируешь это сообщение и посмотрим, что выведет, на это сообщение";
 
 function transformToJson(str) {
-  const arr = str.split(", ").map((item) => item.split(" "));
-  let newArr = [];
+  const finiteObj = {};
+  let cleanArr = [];
+  const arr = str.toLowerCase().replaceAll(",", "").split(" ").sort();
+
+  cleanArr = [...new Set(arr)];
+
   arr.forEach((item) => {
-    newArr = newArr.concat(item);
+    if (item in finiteObj) {
+      finiteObj[item] += 1;
+    } else {
+      finiteObj[item] = 1;
+    }
   });
-  newArr = newArr.map((item) => item.toLowerCase()).sort();
-  return newArr;
+
+  return [cleanArr, finiteObj];
 }
 console.log(transformToJson(str));
