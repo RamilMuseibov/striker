@@ -18,4 +18,4 @@ function split(str, splitter) {
 
   return result;
 }
-console.log(split(str, " "));
+console.log(split(str, " ")); 
