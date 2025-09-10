@@ -19,4 +19,4 @@ function split(str, splitter) {
   return result;
 }
 console.log(split(str, " ")); 
-// 
+// adadadsadasd
